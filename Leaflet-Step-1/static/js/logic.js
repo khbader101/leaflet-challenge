@@ -38,17 +38,17 @@ d3.json(queryUrl, function(data) {
     function getColor(coordinates) {
     switch (true) {
     case coordinates < 10:
-      return "#b0e0e6";
+      return "#ffbdbd";
     case coordinates >= 10 && coordinates < 30:
-      return "#87cefa";
+      return "#ff5757";
     case coordinates >= 30 && coordinates < 50:
-      return "00bfff";
+      return "#ff0000";
     case coordinates >= 50 && coordinates < 70:
-      return "#1e90ff";
+      return "#c70000";
     case coordinates >= 70 && coordinates < 90:
-      return "#0000ff";
+      return "#870000";
     default:
-      return "#000080";
+      return "#400000";
     }
   }
     // get radius from magnitude and amplify
@@ -76,7 +76,7 @@ d3.json(queryUrl, function(data) {
     legend.onAdd = function() {
     var div = L.DomUtil.create("div", "info legend");
     var depths = [-10,10,30,50,70,90];
-    var colors = ["#b0e0e6", "#87cefa", "#00bfff", "#1e90ff", "#0000ff", "#000080"];
+    var colors = ["#ffbdbd", "#ff5757", "#ff0000", "#c70000", "#870000", "#400000"];
     //Adding colors to the legend
     for (var i = 0; i < depths.length; i++) {
       div.innerHTML += "<i style='background: " + colors[i] + "'></i> "
